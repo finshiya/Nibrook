@@ -1,0 +1,83 @@
+     @media (prefers-reduced-motion: reduce) {
+        .animate-float-slow,
+        .animate-fade-up {
+          animation: none !important;
+        }
+      }
+
+      .swiper-pagination-bullet-active {
+        background-color: #e65c2a !important;
+      }
+      .swiper-pagination-bullet {
+        background-color: #faefe9;
+        opacity: 1;
+      }
+
+      /*--------------------------------------------------------------
+# whatsApp Section
+--------------------------------------------------------------*/
+
+      .wtsApp-button {
+        width: 50px;
+        height: 50px;
+        text-decoration: none;
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        bottom: 18px;
+        right: 20px;
+        color: #fff;
+        border-radius: 50px;
+        z-index: 100;
+        box-shadow: 1px 2px 5px 2px rgb(30 30 30 / 30%);
+        transition: all 0.3s ease-out;
+      }
+
+      .wtsApp_btn_bottom {
+        width: 50px;
+        height: 50px;
+        background-color: #25d366;
+        position: absolute;
+        margin: auto;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+      }
+      .wtsApp_btn_bottom:hover {
+        color: #ffffff;
+      }
+
+      .wtsApp_btn_bottom:before,
+      .wtsApp_btn_bottom:after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: #25d366;
+        border-radius: 50%;
+        z-index: -1;
+        opacity: 0.7;
+      }
+
+      .wtsApp_btn_bottom:before {
+        animation: pulse 2s ease-out infinite;
+      }
+      .wtsApp_btn_bottom:after {
+        animation: pulse 2s 1s ease-out infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 0.7;
+        }
+        50% {
+          transform: scale(1.5);
+          opacity: 0.2;
+        }
+        100% {
+          transform: scale(2);
+          opacity: 0;
+        }
+      }

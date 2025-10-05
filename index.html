@@ -8,6 +8,17 @@
       name="description"
       content="NIBROOK Education — Breathe life into your words with expert courses, certified teachers, and a thriving library."
     />
+    <!-- font awesome link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Favicons -->
+    <link href="assets/images/logo.jpeg" rel="icon" />
 
     <!-- Fonts-->
     <link
@@ -16,10 +27,11 @@
     />
     <!-- swiper CDN -->
     <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
-  
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+ <!-- style css -->
+  <link rel="stylesheet" href="./assets/style/style.css">
     <!-- Tailwind Play CDN  -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -63,15 +75,7 @@
         darkMode: ["class", '[data-theme="dark"]'],
       };
     </script>
-    <style>
-      /* Reduced motion support */
-      @media (prefers-reduced-motion: reduce) {
-        .animate-float-slow,
-        .animate-fade-up {
-          animation: none !important;
-        }
-      }
-    </style>
+
   </head>
 
   <body class="min-h-full bg-brand-cream text-brand-ink antialiased font-sans">
@@ -91,6 +95,11 @@
         </a>
 
         <nav aria-label="Primary" class="hidden md:flex items-center gap-8">
+           <a
+            href="./index.html"
+            class="text-sm font-medium hover:text-brand-accent transition-colors"
+            >Home</a
+          >
           <a
             href="#about"
             class="text-sm font-medium hover:text-brand-accent transition-colors"
@@ -131,7 +140,7 @@
     <section class="relative">
       <div class="absolute inset-0">
         <img
-          src="./assets/images/download (6).jpg"
+          src="./assets/images/banner-img.jpg"
           alt="Students learning together on campus"
           class="h-full w-full object-cover"
         />
@@ -298,7 +307,7 @@
       </div>
     </section>
 
-    <!-- About  -->  
+    <!-- About  -->
     <section id="about" class="py-20 mt-32">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="grid items-center gap-10 md:grid-cols-[3fr_2fr]">
@@ -646,14 +655,16 @@
             <summary
               class="cursor-pointer list-none font-medium flex items-center justify-between"
             >
-             Can you guarantee plagiarism-free academic content?
+              Can you guarantee plagiarism-free academic content?
               <span
                 class="ml-4 text-brand-accent transition-transform group-open:rotate-45"
                 >+</span
               >
             </summary>
             <p class="mt-3 text-slate-700 leading-relaxed">
-             Yes. All our content is 100% plagiarism-free, verified through advanced plagiarism detection tools, and customized to meet specific academic standards.
+              Yes. All our content is 100% plagiarism-free, verified through
+              advanced plagiarism detection tools, and customized to meet
+              specific academic standards.
             </p>
           </details>
 
@@ -661,14 +672,16 @@
             <summary
               class="cursor-pointer list-none font-medium flex items-center justify-between"
             >
-             Do you follow academic formatting and referencing styles?
+              Do you follow academic formatting and referencing styles?
               <span
                 class="ml-4 text-brand-accent transition-transform group-open:rotate-45"
                 >+</span
               >
             </summary>
             <p class="mt-3 text-slate-700 leading-relaxed">
-            Absolutely. We adhere to academic guidelines, including formatting and referencing styles like Harvard, APA, or MLA, based on your requirements.
+              Absolutely. We adhere to academic guidelines, including formatting
+              and referencing styles like Harvard, APA, or MLA, based on your
+              requirements.
             </p>
           </details>
 
@@ -683,7 +696,9 @@
               >
             </summary>
             <p class="mt-3 text-slate-700 leading-relaxed">
-             It depends on the complexity and length of the project. Short assignments can be delivered within 2–3 days, while larger projects may take longer.
+              It depends on the complexity and length of the project. Short
+              assignments can be delivered within 2–3 days, while larger
+              projects may take longer.
             </p>
           </details>
         </div>
@@ -704,181 +719,155 @@
           </p>
         </div>
 
-        <div class="mt-10 grid gap-6 md:grid-cols-3">
-          <figure class="rounded-xl bg-brand-cream p-6 shadow-feature">
-            <blockquote class="text-slate-800">
-              &ldquo;The mentorship made my essays shine. I landed an
-              internship!&rdquo;
-            </blockquote>
-            <figcaption class="mt-3 text-sm text-slate-600">
-              — Aisha, Creative Writing
-            </figcaption>
-          </figure>
-          <figure class="rounded-xl bg-brand-cream p-6 shadow-feature">
-            <blockquote class="text-slate-800">
-              &ldquo;Clear, actionable feedback every week. Highly
-              recommend.&rdquo;
-            </blockquote>
-            <figcaption class="mt-3 text-sm text-slate-600">
-              — Mateo, Business Comms
-            </figcaption>
-          </figure>
-          <figure class="rounded-xl bg-brand-cream p-6 shadow-feature">
-            <blockquote class="text-slate-800">
-              &ldquo;I finally speak with confidence. Presentations are now my
-              strength.&rdquo;
-            </blockquote>
-            <figcaption class="mt-3 text-sm text-slate-600">
-              — Lin, Public Speaking
-            </figcaption>
-          </figure>
+        <!-- ✅ Swiper Container -->
+        <div class="mt-10 swiper mySwiper pb-12">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <figure
+                class="rounded-xl bg-brand-cream p-6 shadow-feature text-center"
+              >
+                <div class="flex justify-center mb-4">
+                  <div
+                    class="w-16 h-16 bg-brand-accent rounded-full flex items-center justify-center"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-8 h-8 text-white"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M5.121 17.804A4 4 0 018 16h8a4 4 0 012.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <blockquote class="text-slate-800 italic">
+                  &ldquo;The mentorship made my essays shine. I landed an
+                  internship!&rdquo;
+                </blockquote>
+                <figcaption class="mt-3 text-sm text-slate-600">
+                  — Aisha, Creative Writing
+                </figcaption>
+              </figure>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+              <figure
+                class="rounded-xl bg-brand-cream p-6 shadow-feature text-center"
+              >
+                <div class="flex justify-center mb-4">
+                  <div
+                    class="w-16 h-16 bg-brand-accent rounded-full flex items-center justify-center"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-8 h-8 text-white"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M5.121 17.804A4 4 0 018 16h8a4 4 0 012.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <blockquote class="text-slate-800 italic">
+                  &ldquo;Clear, actionable feedback every week. Highly
+                  recommend.&rdquo;
+                </blockquote>
+                <figcaption class="mt-3 text-sm text-slate-600">
+                  — Mateo, Business Comms
+                </figcaption>
+              </figure>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+              <figure
+                class="rounded-xl bg-brand-cream p-6 shadow-feature text-center"
+              >
+                <div class="flex justify-center mb-4">
+                  <div
+                    class="w-16 h-16 bg-brand-accent rounded-full flex items-center justify-center"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-8 h-8 text-white"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M5.121 17.804A4 4 0 018 16h8a4 4 0 012.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <blockquote class="text-slate-800 italic">
+                  &ldquo;I finally speak with confidence. Presentations are now
+                  my strength.&rdquo;
+                </blockquote>
+                <figcaption class="mt-3 text-sm text-slate-600">
+                  — Lin, Public Speaking
+                </figcaption>
+              </figure>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="swiper-slide">
+              <figure
+                class="rounded-xl bg-brand-cream p-6 shadow-feature text-center"
+              >
+                <div class="flex justify-center mb-4">
+                  <div
+                    class="w-16 h-16 bg-brand-accent rounded-full flex items-center justify-center"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-8 h-8 text-white"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M5.121 17.804A4 4 0 018 16h8a4 4 0 012.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <blockquote class="text-slate-800 italic">
+                  &ldquo;I finally speak with confidence. Presentations are now
+                  my strength.&rdquo;
+                </blockquote>
+                <figcaption class="mt-3 text-sm text-slate-600">
+                  — Lin, Public Speaking
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <!-- ✅ Pagination Dots -->
+          <div class="swiper-pagination mt-6"></div>
         </div>
       </div>
     </section>
-
-    <section id="testimonials" class="py-20 bg-white">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="text-center">
-      <h2
-        class="font-serif text-3xl md:text-4xl font-semibold text-brand-primary"
-      >
-        What Students Say
-      </h2>
-      <p class="mx-auto mt-3 max-w-2xl text-slate-700">
-        Real outcomes from real learners.
-      </p>
-    </div>
-
-    <!-- ✅ Swiper Container -->
-<div class="mt-10 swiper mySwiper pb-12">
-  <div class="swiper-wrapper">
-    <!-- Slide 1 -->
-    <div class="swiper-slide">
-      <figure class="rounded-xl bg-brand-cream p-6 shadow-feature text-center">
-        <div class="flex justify-center mb-4">
-          <div class="w-16 h-16 bg-brand-accent rounded-full flex items-center justify-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-8 h-8 text-white"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M5.121 17.804A4 4 0 018 16h8a4 4 0 012.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-          </div>
-        </div>
-        <blockquote class="text-slate-800 italic">
-          &ldquo;The mentorship made my essays shine. I landed an internship!&rdquo;
-        </blockquote>
-        <figcaption class="mt-3 text-sm text-slate-600">
-          — Aisha, Creative Writing
-        </figcaption>
-      </figure>
-    </div>
-
-    <!-- Slide 2 -->
-    <div class="swiper-slide">
-      <figure class="rounded-xl bg-brand-cream p-6 shadow-feature text-center">
-        <div class="flex justify-center mb-4">
-          <div class="w-16 h-16 bg-brand-accent rounded-full flex items-center justify-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-8 h-8 text-white"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M5.121 17.804A4 4 0 018 16h8a4 4 0 012.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-          </div>
-        </div>
-        <blockquote class="text-slate-800 italic">
-          &ldquo;Clear, actionable feedback every week. Highly recommend.&rdquo;
-        </blockquote>
-        <figcaption class="mt-3 text-sm text-slate-600">
-          — Mateo, Business Comms
-        </figcaption>
-      </figure>
-    </div>
-
-    <!-- Slide 3 -->
-    <div class="swiper-slide">
-      <figure class="rounded-xl bg-brand-cream p-6 shadow-feature text-center">
-        <div class="flex justify-center mb-4">
-          <div class="w-16 h-16 bg-brand-accent rounded-full flex items-center justify-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-8 h-8 text-white"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M5.121 17.804A4 4 0 018 16h8a4 4 0 012.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-          </div>
-        </div>
-        <blockquote class="text-slate-800 italic">
-          &ldquo;I finally speak with confidence. Presentations are now my strength.&rdquo;
-        </blockquote>
-        <figcaption class="mt-3 text-sm text-slate-600">
-          — Lin, Public Speaking
-        </figcaption>
-      </figure>
-    </div>
-
-    <!-- Slide 4 -->
-    <div class="swiper-slide">
-      <figure class="rounded-xl bg-brand-cream p-6 shadow-feature text-center">
-        <div class="flex justify-center mb-4">
-          <div class="w-16 h-16 bg-brand-accent rounded-full flex items-center justify-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-8 h-8 text-white"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M5.121 17.804A4 4 0 018 16h8a4 4 0 012.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-          </div>
-        </div>
-        <blockquote class="text-slate-800 italic">
-          &ldquo;I finally speak with confidence. Presentations are now my strength.&rdquo;
-        </blockquote>
-        <figcaption class="mt-3 text-sm text-slate-600">
-          — Lin, Public Speaking
-        </figcaption>
-      </figure>
-    </div>
-  </div>
-
-  <!-- ✅ Pagination Dots -->
-  <div class="swiper-pagination mt-6"></div>
-</div>
-
-  </div>
-</section>
 
     <!-- Contact  -->
     <section id="contact" class="py-20">
@@ -954,20 +943,116 @@
     </section>
 
     <!-- Footer  -->
-    <footer class="border-t border-black/5 bg-white">
+    <footer class="bg-white py-12 border-t border-gray-200">
       <div
-        class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between"
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8"
       >
-        <p class="text-sm text-slate-600">
-          © <span id="y"></span> NIBROOK. All rights reserved.
-        </p>
-        <img
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-10-05%20at%2012.57.54%20PM-4E76dPTalDOeSjMg9tYQSAlwnx2VIN.jpeg"
-          alt="NIBROOK logo"
-          class="h-8 w-auto"
-        />
+        <!-- Company Info -->
+        <div>
+          <img src="./assets/images/logo-1.png" class="w-[50%]" />
+          <p class="text-slate-600 mb-2">Nibrook Academic Research Center</p>
+          <p class="text-slate-600 mb-2">Ground Floor, CD Tower, Kozhikode</p>
+          <p class="text-slate-600 mb-2">
+            <strong class="text-slate-600">Phone:</strong> 0495-797-9777
+          </p>
+          <p class="text-slate-600 mb-4">
+            <strong class="text-slate-600">Email:</strong> hello@nibrook.example
+          </p>
+        </div>
+
+        <!-- Useful Links -->
+        <div>
+          <h3 class="text-lg font-semibold text-orange-500 mb-4">
+            Useful Links
+          </h3>
+          <ul class="space-y-2">
+            <li>
+              <i aria-hidden="true" class="fas fa-caret-right me-2 text-slate-600"></i>
+              <a href="#" class="text-slate-600 hover:text-orange-500">Home</a>
+            </li>
+            <li>
+               <i aria-hidden="true" class="fas fa-caret-right me-2 text-slate-600"></i>
+              <a href="#about" class="text-slate-600 hover:text-orange-500"
+                >About us</a
+              >
+            </li>
+            <li>
+               <i aria-hidden="true" class="fas fa-caret-right me-2 text-slate-600"></i>
+              <a href="#services" class="text-slate-600 hover:text-orange-500"
+                >Services</a
+              >
+            </li>
+            <li>
+               <i aria-hidden="true" class="fas fa-caret-right me-2 text-slate-600"></i>
+              <a href="./terms-condition.html" class="text-slate-600 hover:text-orange-500"
+                >Terms of service</a
+              >
+            </li>
+            <li>
+               <i aria-hidden="true" class="fas fa-caret-right me-2 text-slate-600"></i>
+              <a href="./privacy-policy.html" class="text-slate-600 hover:text-orange-500"
+                >Privacy policy</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h3 class="text-lg font-semibold text-orange-500 mb-4">
+            Our Services
+          </h3>
+          <ul class="space-y-2">
+            <li>
+               <i aria-hidden="true" class="fas fa-caret-right me-2 text-slate-600"></i>
+              <a href="#services" class="text-slate-600 hover:text-orange-500"
+                >Academic Writing</a
+              >
+            </li>
+            <li>
+               <i aria-hidden="true" class="fas fa-caret-right me-2 text-slate-600"></i>
+              <a href="#services" class="text-slate-600 hover:text-orange-500"
+                >Business Plans</a
+              >
+            </li>
+            <li>
+               <i aria-hidden="true" class="fas fa-caret-right me-2 text-slate-600"></i>
+              <a href="#services" class="text-slate-600 hover:text-orange-500"
+                >Business Development</a
+              >
+            </li>
+            <li>
+               <i aria-hidden="true" class="fas fa-caret-right me-2 text-slate-600"></i>
+              <a href="#services" class="text-slate-600 hover:text-orange-500"
+                >Business Bookkeeping</a
+              >
+            </li>
+            <li>
+               <i aria-hidden="true" class="fas fa-caret-right me-2 text-slate-600"></i>
+              <a href="#services" class="text-slate-600 hover:text-orange-500"
+                >SEO</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        class="border-t border-gray-300 mt-8 pt-4 text-center text-sm text-slate-600"
+      >
+        ©2025
+        <span class="text-slate-600 font-semibold"
+          >Nibrook Academic Research Centre LLP.</span
+        >
+        All Rights Reserved.
       </div>
     </footer>
+
+    <a class="wtsApp-button" target="_blank" href="https://wa.me/9846225356">
+      <div class="wtsApp_btn_bottom">
+        <i class="fa-brands fa-whatsapp" style="font-size: 22px"></i>
+      </div>
+    </a>
 
     <!-- tiny inline year script (safe, no framework)  -->
     <script>
@@ -976,24 +1061,24 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<script>
-  const swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    spaceBetween: 20,
-    loop: true,
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    breakpoints: {
-      768: { slidesPerView: 2 },
-      1024: { slidesPerView: 3 },
-    },
-  });
-</script>
+    <script>
+      const swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        },
+      });
+    </script>
   </body>
 </html>
