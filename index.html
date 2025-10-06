@@ -16,10 +16,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
     <!-- Favicons -->
     <link href="assets/images/logo.jpeg" rel="icon" />
-
     <!-- Fonts-->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
@@ -30,8 +28,8 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
- <!-- style css -->
-  <link rel="stylesheet" href="./assets/style/style.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="./assets/style/style.css" />
     <!-- Tailwind Play CDN  -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -75,7 +73,6 @@
         darkMode: ["class", '[data-theme="dark"]'],
       };
     </script>
-
   </head>
 
   <body class="min-h-full bg-brand-cream text-brand-ink antialiased font-sans">
@@ -95,34 +92,34 @@
         </a>
 
         <nav aria-label="Primary" class="hidden md:flex items-center gap-8">
-           <a
+          <a
             href="./index.html"
-            class="text-sm font-medium hover:text-brand-accent transition-colors"
+            class="text-base font-medium hover:text-brand-accent transition-colors"
             >Home</a
           >
           <a
             href="#about"
-            class="text-sm font-medium hover:text-brand-accent transition-colors"
+            class="text-base font-medium hover:text-brand-accent transition-colors"
             >About</a
           >
           <a
             href="#services"
-            class="text-sm font-medium hover:text-brand-accent transition-colors"
+            class="text-base font-medium hover:text-brand-accent transition-colors"
             >Services</a
           >
           <a
             href="#faq"
-            class="text-sm font-medium hover:text-brand-accent transition-colors"
+            class="text-base font-medium hover:text-brand-accent transition-colors"
             >FAQ</a
           >
           <a
             href="#testimonials"
-            class="text-sm font-medium hover:text-brand-accent transition-colors"
+            class="text-base font-medium hover:text-brand-accent transition-colors"
             >Testimonials</a
           >
           <a
             href="#contact"
-            class="text-sm font-medium hover:text-brand-accent transition-colors"
+            class="text-base font-medium hover:text-brand-accent transition-colors"
             >Contact</a
           >
         </nav>
@@ -176,75 +173,126 @@
         </div>
       </div>
 
-   <!-- Feature Section -->
-<section class="relative top-[70px]">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <!-- Feature Section -->
+      <section class="relative top-[70px]">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div
+              class="rounded-md bg-white/95 backdrop-blur shadow-feature p-6 flex items-start gap-4 animate-fade-up"
+            >
+              <span
+                class="inline-flex h-11 w-11 items-center justify-center rounded-md bg-orange-500 text-white shrink-0"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M12 20h9M16.5 3.5l4 4L7 21H3v-4L16.5 3.5z"
+                  />
+                </svg>
+              </span>
+              <div>
+                <h3 class="font-semibold">Blog Writing</h3>
+                <p class="mt-1 text-sm text-slate-600">
+                  Create compelling blogs that engage readers and boost SEO.
+                </p>
+              </div>
+            </div>
 
-      <div class="rounded-md bg-white/95 backdrop-blur shadow-feature p-6 flex items-start gap-4 animate-fade-up">
-        <span class="inline-flex h-11 w-11 items-center justify-center rounded-md bg-orange-500 text-white shrink-0">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-              d="M12 20h9M16.5 3.5l4 4L7 21H3v-4L16.5 3.5z"/>
-          </svg>
-        </span>
-        <div>
-          <h3 class="font-semibold">Blog Writing</h3>
-          <p class="mt-1 text-sm text-slate-600">
-            Create compelling blogs that engage readers and boost SEO.
-          </p>
+            <div
+              class="rounded-md bg-white/95 backdrop-blur shadow-feature p-6 flex items-start gap-4 animate-fade-up"
+            >
+              <span
+                class="inline-flex h-11 w-11 items-center justify-center rounded-md bg-orange-500 text-white shrink-0"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M4 2h16v20H4V2zm2 2v16h12V4H6zm2 2h8v2H8V6zm0 4h8v2H8v-2zm0 4h8v2H8v-2z"
+                  />
+                </svg>
+              </span>
+              <div>
+                <h3 class="font-semibold">Article Creation</h3>
+                <p class="mt-1 text-sm text-slate-600">
+                  Produce high-quality articles that communicate ideas
+                  effectively.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="rounded-md bg-white/95 backdrop-blur shadow-feature p-6 flex items-start gap-4 animate-fade-up"
+            >
+              <span
+                class="inline-flex h-11 w-11 items-center justify-center rounded-md bg-orange-500 text-white shrink-0"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M9.75 17h4.5M4.5 5.25h15a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-15a.75.75 0 0 1-.75-.75V6a.75.75 0 0 1 .75-.75z"
+                  />
+                </svg>
+              </span>
+              <div>
+                <h3 class="font-semibold">Website Content</h3>
+                <p class="mt-1 text-sm text-slate-600">
+                  Build effective website content that converts visitors into
+                  customers.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="rounded-md bg-white/95 backdrop-blur shadow-feature p-6 flex items-start gap-4 animate-fade-up"
+            >
+              <span
+                class="inline-flex h-11 w-11 items-center justify-center rounded-md bg-orange-500 text-white shrink-0"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M5 8.5v7l11 2V6.5L5 8.5zM16 8v8"
+                  />
+                </svg>
+              </span>
+              <div>
+                <h3 class="font-semibold">Marketing Copy</h3>
+                <p class="mt-1 text-sm text-slate-600">
+                  Craft persuasive copy that drives engagement and sales.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-
-      <div class="rounded-md bg-white/95 backdrop-blur shadow-feature p-6 flex items-start gap-4 animate-fade-up">
-        <span class="inline-flex h-11 w-11 items-center justify-center rounded-md bg-orange-500 text-white shrink-0">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M4 2h16v20H4V2zm2 2v16h12V4H6zm2 2h8v2H8V6zm0 4h8v2H8v-2zm0 4h8v2H8v-2z"/>
-          </svg>
-        </span>
-        <div>
-          <h3 class="font-semibold">Article Creation</h3>
-          <p class="mt-1 text-sm text-slate-600">
-            Produce high-quality articles that communicate ideas effectively.
-          </p>
-        </div>
-      </div>
-
-      <div class="rounded-md bg-white/95 backdrop-blur shadow-feature p-6 flex items-start gap-4 animate-fade-up">
-        <span class="inline-flex h-11 w-11 items-center justify-center rounded-md bg-orange-500 text-white shrink-0">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-              d="M9.75 17h4.5M4.5 5.25h15a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-15a.75.75 0 0 1-.75-.75V6a.75.75 0 0 1 .75-.75z"/>
-          </svg>
-        </span>
-        <div>
-          <h3 class="font-semibold">Website Content</h3>
-          <p class="mt-1 text-sm text-slate-600">
-            Build effective website content that converts visitors into customers.
-          </p>
-        </div>
-      </div>
-
-      <div class="rounded-md bg-white/95 backdrop-blur shadow-feature p-6 flex items-start gap-4 animate-fade-up">
-        <span class="inline-flex h-11 w-11 items-center justify-center rounded-md bg-orange-500 text-white shrink-0">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-              d="M5 8.5v7l11 2V6.5L5 8.5zM16 8v8"/>
-          </svg>
-        </span>
-        <div>
-          <h3 class="font-semibold">Marketing Copy</h3>
-          <p class="mt-1 text-sm text-slate-600">
-            Craft persuasive copy that drives engagement and sales.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
+      </section>
     </section>
 
     <!-- About  -->
@@ -258,10 +306,7 @@
               About NIBROOK
             </h2>
             <p class="mt-4 text-slate-700 leading-relaxed">
-              NIBROOK helps students and professionals sharpen their writing and
-              communication. Our programs blend practical projects, expert
-              feedback, and a supportive community to help you express ideas
-              with clarity and impact.
+             At Nibrook, we specialize in delivering high-quality academic and business solutions tailored to your needs. With over 6 years of experience and a team of 44+ expert professionals, we are committed to providing exceptional services, whether it's academic research, business planning, or digital solutions like SEO. Your success is our priority.
             </p>
 
             <ul class="mt-6 space-y-3 text-slate-700">
@@ -825,7 +870,7 @@
 
         <form
           class="mt-8 grid gap-4 rounded-xl bg-white p-6 shadow-feature"
-          action="mailto:hello@nibrook.example"
+          action="mailto:hello@nibrook.com"
           method="post"
           enctype="text/plain"
         >
@@ -866,9 +911,9 @@
             <p class="text-sm text-slate-600">
               Or email us at
               <a
-                href="mailto:hello@nibrook.example"
+                href="mailto:hello@nibrook.com"
                 class="text-brand-accent underline"
-                >hello@nibrook.example</a
+                >hello@nibrook.com</a
               >
             </p>
             <button
@@ -896,7 +941,7 @@
             <strong class="text-slate-600">Phone:</strong> 0495-797-9777
           </p>
           <p class="text-slate-600 mb-4">
-            <strong class="text-slate-600">Email:</strong> hello@nibrook.example
+            <strong class="text-slate-600">Email:</strong> hello@nibrook.com
           </p>
         </div>
 
@@ -907,30 +952,49 @@
           </h3>
           <ul class="space-y-2">
             <li>
-              <i aria-hidden="true" class="fas fa-caret-right me-2 text-slate-600"></i>
+              <i
+                aria-hidden="true"
+                class="fas fa-caret-right me-2 text-slate-600"
+              ></i>
               <a href="#" class="text-slate-600 hover:text-orange-500">Home</a>
             </li>
             <li>
-               <i aria-hidden="true" class="fas fa-caret-right me-2 text-slate-600"></i>
+              <i
+                aria-hidden="true"
+                class="fas fa-caret-right me-2 text-slate-600"
+              ></i>
               <a href="#about" class="text-slate-600 hover:text-orange-500"
                 >About us</a
               >
             </li>
             <li>
-               <i aria-hidden="true" class="fas fa-caret-right me-2 text-slate-600"></i>
+              <i
+                aria-hidden="true"
+                class="fas fa-caret-right me-2 text-slate-600"
+              ></i>
               <a href="#services" class="text-slate-600 hover:text-orange-500"
                 >Services</a
               >
             </li>
             <li>
-               <i aria-hidden="true" class="fas fa-caret-right me-2 text-slate-600"></i>
-              <a href="./terms-condition.html" class="text-slate-600 hover:text-orange-500"
+              <i
+                aria-hidden="true"
+                class="fas fa-caret-right me-2 text-slate-600"
+              ></i>
+              <a
+                href="./terms-service.html"
+                class="text-slate-600 hover:text-orange-500"
                 >Terms of service</a
               >
             </li>
             <li>
-               <i aria-hidden="true" class="fas fa-caret-right me-2 text-slate-600"></i>
-              <a href="./privacy-policy.html" class="text-slate-600 hover:text-orange-500"
+              <i
+                aria-hidden="true"
+                class="fas fa-caret-right me-2 text-slate-600"
+              ></i>
+              <a
+                href="./privacy-policy.html"
+                class="text-slate-600 hover:text-orange-500"
                 >Privacy policy</a
               >
             </li>
@@ -944,31 +1008,46 @@
           </h3>
           <ul class="space-y-2">
             <li>
-               <i aria-hidden="true" class="fas fa-caret-right me-2 text-slate-600"></i>
+              <i
+                aria-hidden="true"
+                class="fas fa-caret-right me-2 text-slate-600"
+              ></i>
               <a href="#services" class="text-slate-600 hover:text-orange-500"
                 >Academic Writing</a
               >
             </li>
             <li>
-               <i aria-hidden="true" class="fas fa-caret-right me-2 text-slate-600"></i>
+              <i
+                aria-hidden="true"
+                class="fas fa-caret-right me-2 text-slate-600"
+              ></i>
               <a href="#services" class="text-slate-600 hover:text-orange-500"
                 >Business Plans</a
               >
             </li>
             <li>
-               <i aria-hidden="true" class="fas fa-caret-right me-2 text-slate-600"></i>
+              <i
+                aria-hidden="true"
+                class="fas fa-caret-right me-2 text-slate-600"
+              ></i>
               <a href="#services" class="text-slate-600 hover:text-orange-500"
                 >Business Development</a
               >
             </li>
             <li>
-               <i aria-hidden="true" class="fas fa-caret-right me-2 text-slate-600"></i>
+              <i
+                aria-hidden="true"
+                class="fas fa-caret-right me-2 text-slate-600"
+              ></i>
               <a href="#services" class="text-slate-600 hover:text-orange-500"
                 >Business Bookkeeping</a
               >
             </li>
             <li>
-               <i aria-hidden="true" class="fas fa-caret-right me-2 text-slate-600"></i>
+              <i
+                aria-hidden="true"
+                class="fas fa-caret-right me-2 text-slate-600"
+              ></i>
               <a href="#services" class="text-slate-600 hover:text-orange-500"
                 >SEO</a
               >
@@ -981,9 +1060,7 @@
         class="border-t border-gray-300 mt-8 pt-4 text-center text-sm text-slate-600"
       >
         ©2025
-        <span class="text-slate-600 font-semibold"
-          >Nibrook Academic Research Centre LLP.</span
-        >
+        <span class="text-slate-600 font-semibold">Nibrook International.</span>
         All Rights Reserved.
       </div>
     </footer>
