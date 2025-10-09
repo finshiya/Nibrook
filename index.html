@@ -1,773 +1,497 @@
 <!DOCTYPE html>
 <html lang="en" class="h-full scroll-smooth">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>NIBROOK Education — Learn With Confidence</title>
-    <meta
-      name="description"
-      content="NIBROOK Education — Breathe life into your words with expert courses, certified teachers, and a thriving library."
-    />
-    <!-- font awesome link -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
-      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <!-- Favicons -->
-    <link href="assets/images/logo.jpeg" rel="icon" />
-    <!-- Fonts-->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <!-- swiper CDN -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <!-- style css -->
-    <link rel="stylesheet" href="./assets/style/style.css" />
-    <!-- Tailwind Play CDN  -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              // NIBROOK brand palette (3-5 colors total)
-              brand: {
-                primary: "#0f3e33", // deep green
-                primaryFg: "#f9f6f3", // light on green
-                accent: "#e65c2a", // warm orange
-                accentFg: "#fffaf7", // light on orange
-                cream: "#faefe9", // soft cream bg
-                ink: "#0f172a", // neutral dark text
-              },
-            },
-            fontFamily: {
-              sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
-              serif: ["Playfair Display", "ui-serif", "Georgia", "serif"],
-            },
-            keyframes: {
-              "fade-up": {
-                "0%": { opacity: 0, transform: "translateY(16px)" },
-                "100%": { opacity: 1, transform: "translateY(0)" },
-              },
-              "float-slow": {
-                "0%,100%": { transform: "translateY(0)" },
-                "50%": { transform: "translateY(-6px)" },
-              },
-            },
-            animation: {
-              "fade-up": "fade-up 0.8s ease-out both",
-              "float-slow": "float-slow 6s ease-in-out infinite",
-            },
-            boxShadow: {
-              feature: "0 10px 30px -10px rgba(0,0,0,0.35)",
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NIBROOK Education — Learn With Confidence</title>
+  <meta name="description"
+    content="NIBROOK Education — Breathe life into your words with expert courses, certified teachers, and a thriving library." />
+  <!-- font awesome link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Favicons -->
+  <link href="assets/images/logo.jpeg" rel="icon" />
+  <!-- Fonts-->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+    rel="stylesheet" />
+  <!-- swiper CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- style css -->
+  <link rel="stylesheet" href="./assets/style/style.css" />
+  <!-- Tailwind Play CDN  -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            // NIBROOK brand palette (3-5 colors total)
+            brand: {
+              primary: "#0f3e33", // deep green
+              primaryFg: "#f9f6f3", // light on green
+              accent: "#e65c2a", // warm orange
+              accentFg: "#fffaf7", // light on orange
+              cream: "#faefe9", // soft cream bg
+              ink: "#0f172a", // neutral dark text
             },
           },
+          fontFamily: {
+            sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+            serif: ["Playfair Display", "ui-serif", "Georgia", "serif"],
+          },
+          keyframes: {
+            "fade-up": {
+              "0%": { opacity: 0, transform: "translateY(16px)" },
+              "100%": { opacity: 1, transform: "translateY(0)" },
+            },
+            "float-slow": {
+              "0%,100%": { transform: "translateY(0)" },
+              "50%": { transform: "translateY(-6px)" },
+            },
+          },
+          animation: {
+            "fade-up": "fade-up 0.8s ease-out both",
+            "float-slow": "float-slow 6s ease-in-out infinite",
+          },
+          boxShadow: {
+            feature: "0 10px 30px -10px rgba(0,0,0,0.35)",
+          },
         },
-        darkMode: ["class", '[data-theme="dark"]'],
-      };
-    </script>
-  </head>
+      },
+      darkMode: ["class", '[data-theme="dark"]'],
+    };
+  </script>
+</head>
 
-  <body class="min-h-full bg-brand-cream text-brand-ink antialiased font-sans">
-    <!-- Header  -->
-    <header
-      class="sticky top-0 z-40 bg-white/70 backdrop-blur border-b border-black/5"
-    >
-      <div
-        class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between"
-      >
-        <a href="#" class="flex items-center gap-3">
-          <img
-            src="./assets/images/logo-1.png"
-            alt="NIBROOK logo - hand holding a pen inside orange circle"
-            class="w-40"
-          />
+<body class="min-h-full bg-brand-cream text-brand-ink antialiased font-sans">
+  <!-- Header  -->
+  <header class="sticky top-0 z-40 bg-white/70 backdrop-blur border-b border-black/5">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <img src="./assets/images/logo-1.png" alt="NIBROOK logo - hand holding a pen inside orange circle"
+          class="w-40" />
+      </a>
+
+      <nav aria-label="Primary" class="hidden md:flex items-center gap-8">
+        <a href="./index.html" class="text-base font-medium hover:text-brand-accent transition-colors">Home</a>
+        <a href="#about" class="text-base font-medium hover:text-brand-accent transition-colors">About</a>
+        <a href="#services" class="text-base font-medium hover:text-brand-accent transition-colors">Services</a>
+        <a href="#faq" class="text-base font-medium hover:text-brand-accent transition-colors">FAQ</a>
+        <a href="#testimonials" class="text-base font-medium hover:text-brand-accent transition-colors">Testimonials</a>
+        <a href="#contact" class="text-base font-medium hover:text-brand-accent transition-colors">Contact</a>
+      </nav>
+
+        <a class=" ml-6 inline-flex items-center gap-2 rounded-full bg-brand-accent px-4 py-2 text-white text-sm font-semibold shadow hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-accent" target="_blank" href="https://wa.me/9846225356">
+        Get Started
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO Banner-->
+  <section class="relative">
+    <div class="absolute inset-0">
+      <img src="./assets/images/banner-img.jpg" alt="Students learning together on campus"
+        class="h-full w-full object-cover" />
+      <div class="absolute inset-0 bg-black/60"></div>
+    </div>
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-40 pb-40 text-center text-white">
+      <p class="uppercase tracking-widest font-semibold text-sm sm:text-base animate-fade-up">
+        Education that elevates your voice
+      </p>
+      <h1
+        class="mt-3 font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight animate-fade-up"
+        style="text-shadow: 0 8px 30px rgba(0, 0, 0, 0.6)">
+        Breathe Life into Your Words
+      </h1>
+      <p class="mx-auto mt-4 max-w-2xl text-white/85 leading-relaxed animate-fade-up">
+        NIBROOK helps students and professionals master the craft of writing
+        with practical courses, mentorship, and compassionate feedback.
+      </p>
+      <!-- <div class="mt-8 animate-fade-up">
+        <a href="#contact"
+          class="inline-flex rounded-full bg-brand-accent px-6 py-3 text-base font-semibold text-brand-accentFg shadow-lg shadow-black/30 hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-accent">
+          Contact Us
         </a>
+      </div> -->
+    </div>
 
-        <nav aria-label="Primary" class="hidden md:flex items-center gap-8">
-          <a
-            href="./index.html"
-            class="text-base font-medium hover:text-brand-accent transition-colors"
-            >Home</a
-          >
-          <a
-            href="#about"
-            class="text-base font-medium hover:text-brand-accent transition-colors"
-            >About</a
-          >
-          <a
-            href="#services"
-            class="text-base font-medium hover:text-brand-accent transition-colors"
-            >Services</a
-          >
-          <a
-            href="#faq"
-            class="text-base font-medium hover:text-brand-accent transition-colors"
-            >FAQ</a
-          >
-          <a
-            href="#testimonials"
-            class="text-base font-medium hover:text-brand-accent transition-colors"
-            >Testimonials</a
-          >
-          <a
-            href="#contact"
-            class="text-base font-medium hover:text-brand-accent transition-colors"
-            >Contact</a
-          >
-        </nav>
-
-        <a
-          href="#contact"
-          class="ml-6 inline-flex items-center gap-2 rounded-full bg-brand-accent px-4 py-2 text-white text-sm font-semibold shadow hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-accent"
-        >
-          Get Started
-        </a>
-      </div>
-    </header>
-
-    <!-- HERO Banner-->
-    <section class="relative">
-      <div class="absolute inset-0">
-        <img
-          src="./assets/images/banner-img.jpg"
-          alt="Students learning together on campus"
-          class="h-full w-full object-cover"
-        />
-        <div class="absolute inset-0 bg-black/60"></div>
-      </div>
-      <div
-        class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-40 pb-40 text-center text-white"
-      >
-        <p
-          class="uppercase tracking-widest font-semibold text-sm sm:text-base animate-fade-up"
-        >
-          Education that elevates your voice
-        </p>
-        <h1
-          class="mt-3 font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight animate-fade-up"
-          style="text-shadow: 0 8px 30px rgba(0, 0, 0, 0.6)"
-        >
-          Breathe Life into Your Words
-        </h1>
-        <p
-          class="mx-auto mt-4 max-w-2xl text-white/85 leading-relaxed animate-fade-up"
-        >
-          NIBROOK helps students and professionals master the craft of writing
-          with practical courses, mentorship, and compassionate feedback.
-        </p>
-        <div class="mt-8 animate-fade-up">
-          <a
-            href="#contact"
-            class="inline-flex rounded-full bg-brand-accent px-6 py-3 text-base font-semibold text-brand-accentFg shadow-lg shadow-black/30 hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-accent"
-          >
-            Contact Us
-          </a>
-        </div>
-      </div>
-
-      <!-- Feature Section -->
-      <section class="relative top-[70px]">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <div
-              class="rounded-md bg-white/95 backdrop-blur shadow-feature p-6 flex items-start gap-4 animate-fade-up"
-            >
-              <span
-                class="inline-flex h-11 w-11 items-center justify-center rounded-md bg-orange-500 text-white shrink-0"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.5"
-                    d="M12 20h9M16.5 3.5l4 4L7 21H3v-4L16.5 3.5z"
-                  />
-                </svg>
-              </span>
-              <div>
-                <h3 class="font-semibold">Blog Writing</h3>
-                <p class="mt-1 text-sm text-slate-600">
-                  Create compelling blogs that engage readers and boost SEO.
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="rounded-md bg-white/95 backdrop-blur shadow-feature p-6 flex items-start gap-4 animate-fade-up"
-            >
-              <span
-                class="inline-flex h-11 w-11 items-center justify-center rounded-md bg-orange-500 text-white shrink-0"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M4 2h16v20H4V2zm2 2v16h12V4H6zm2 2h8v2H8V6zm0 4h8v2H8v-2zm0 4h8v2H8v-2z"
-                  />
-                </svg>
-              </span>
-              <div>
-                <h3 class="font-semibold">Article Creation</h3>
-                <p class="mt-1 text-sm text-slate-600">
-                  Produce high-quality articles that communicate ideas
-                  effectively.
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="rounded-md bg-white/95 backdrop-blur shadow-feature p-6 flex items-start gap-4 animate-fade-up"
-            >
-              <span
-                class="inline-flex h-11 w-11 items-center justify-center rounded-md bg-orange-500 text-white shrink-0"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.5"
-                    d="M9.75 17h4.5M4.5 5.25h15a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-15a.75.75 0 0 1-.75-.75V6a.75.75 0 0 1 .75-.75z"
-                  />
-                </svg>
-              </span>
-              <div>
-                <h3 class="font-semibold">Website Content</h3>
-                <p class="mt-1 text-sm text-slate-600">
-                  Build effective website content that converts visitors into
-                  customers.
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="rounded-md bg-white/95 backdrop-blur shadow-feature p-6 flex items-start gap-4 animate-fade-up"
-            >
-              <span
-                class="inline-flex h-11 w-11 items-center justify-center rounded-md bg-orange-500 text-white shrink-0"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.5"
-                    d="M5 8.5v7l11 2V6.5L5 8.5zM16 8v8"
-                  />
-                </svg>
-              </span>
-              <div>
-                <h3 class="font-semibold">Marketing Copy</h3>
-                <p class="mt-1 text-sm text-slate-600">
-                  Craft persuasive copy that drives engagement and sales.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </section>
-
-    <!-- About  -->
-    <section id="about" class="py-20 mt-32">
+    <!-- Feature Section -->
+    <section class="relative top-[70px]">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="grid items-center gap-10 md:grid-cols-[3fr_2fr]">
-          <div class="rounded-xl bg-white p-8">
-            <h2
-              class="font-serif text-3xl md:text-4xl font-semibold text-brand-primary"
-            >
-              About NIBROOK
-            </h2>
-            <p class="mt-4 text-slate-700 leading-relaxed">
-             At Nibrook, we specialize in delivering high-quality academic and business solutions tailored to your needs. With over 6 years of experience and a team of 44+ expert professionals, we are committed to providing exceptional services, whether it's academic research, business planning, or digital solutions like SEO. Your success is our priority.
-            </p>
-
-            <ul class="mt-6 space-y-3 text-slate-700">
-              <li class="flex items-center gap-3">
-                <span
-                  class="flex items-center justify-center w-8 h-8 bg-[#faefe9] rounded-full p-1"
-                >
-                  <svg
-                    class="w-4 h-4 text-brand-accent"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                </span>
-                Experienced and dedicated team.
-              </li>
-
-              <li class="flex items-center gap-3">
-                <span
-                  class="flex items-center justify-center w-8 h-8 bg-[#faefe9] rounded-full p-1"
-                >
-                  <svg
-                    class="w-4 h-4 text-brand-accent"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                </span>
-                Trusted by clients worldwide.
-              </li>
-
-              <li class="flex items-center gap-3">
-                <span
-                  class="flex items-center justify-center w-8 h-8 bg-[#faefe9] rounded-full p-1"
-                >
-                  <svg
-                    class="w-4 h-4 text-brand-accent"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                </span>
-                Customized solutions for every need.
-              </li>
-
-              <li class="flex items-center gap-3">
-                <span
-                  class="flex items-center justify-center w-8 h-8 bg-[#faefe9] rounded-full p-1"
-                >
-                  <svg
-                    class="w-4 h-4 text-brand-accent"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                </span>
-                On-time delivery with zero compromise.
-              </li>
-
-              <li class="flex items-center gap-3">
-                <span
-                  class="flex items-center justify-center w-8 h-8 bg-[#faefe9] rounded-full p-1"
-                >
-                  <svg
-                    class="w-4 h-4 text-brand-accent"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                </span>
-                Premium quality at affordable rates.
-              </li>
-            </ul>
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="rounded-md bg-white/95 backdrop-blur shadow-feature p-6 flex items-start gap-4 animate-fade-up">
+            <span
+              class="inline-flex h-11 w-11 items-center justify-center rounded-md bg-orange-500 text-white shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M12 20h9M16.5 3.5l4 4L7 21H3v-4L16.5 3.5z" />
+              </svg>
+            </span>
+            <div>
+              <h3 class="font-semibold">Blog Writing</h3>
+              <p class="mt-1 text-sm text-slate-600">
+                Create compelling blogs that engage readers and boost SEO.
+              </p>
+            </div>
           </div>
 
-          <div class="relative">
-            <div class="rounded-xl flex justify-center p-1">
-              <img
-                src="./assets/images/Scholar_Photos_-_Download_Free_High-Quality_Pictures___Freepik-removebg-preview.png"
-                alt="Students studying together"
-                class="w-full max-w-[400px] rounded-[10px] object-cover"
-              />
+          <div class="rounded-md bg-white/95 backdrop-blur shadow-feature p-6 flex items-start gap-4 animate-fade-up">
+            <span
+              class="inline-flex h-11 w-11 items-center justify-center rounded-md bg-orange-500 text-white shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M4 2h16v20H4V2zm2 2v16h12V4H6zm2 2h8v2H8V6zm0 4h8v2H8v-2zm0 4h8v2H8v-2z" />
+              </svg>
+            </span>
+            <div>
+              <h3 class="font-semibold">Article Creation</h3>
+              <p class="mt-1 text-sm text-slate-600">
+                Produce high-quality articles that communicate ideas
+                effectively.
+              </p>
             </div>
-            <div
-              class="absolute -bottom-4 -left-4 hidden sm:block rounded-lg bg-brand-accent px-4 py-2 text-brand-accentFg shadow animate-float-slow"
-            >
-              Breathe Life into Your Words
+          </div>
+
+          <div class="rounded-md bg-white/95 backdrop-blur shadow-feature p-6 flex items-start gap-4 animate-fade-up">
+            <span
+              class="inline-flex h-11 w-11 items-center justify-center rounded-md bg-orange-500 text-white shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M9.75 17h4.5M4.5 5.25h15a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-15a.75.75 0 0 1-.75-.75V6a.75.75 0 0 1 .75-.75z" />
+              </svg>
+            </span>
+            <div>
+              <h3 class="font-semibold">Website Content</h3>
+              <p class="mt-1 text-sm text-slate-600">
+                Build effective website content that converts visitors into
+                customers.
+              </p>
+            </div>
+          </div>
+
+          <div class="rounded-md bg-white/95 backdrop-blur shadow-feature p-6 flex items-start gap-4 animate-fade-up">
+            <span
+              class="inline-flex h-11 w-11 items-center justify-center rounded-md bg-orange-500 text-white shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M5 8.5v7l11 2V6.5L5 8.5zM16 8v8" />
+              </svg>
+            </span>
+            <div>
+              <h3 class="font-semibold">Marketing Copy</h3>
+              <p class="mt-1 text-sm text-slate-600">
+                Craft persuasive copy that drives engagement and sales.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
+  </section>
 
-    <!-- Services  -->
-    <section id="services" class="py-16 sm:py-24 bg-white">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <h2
-            class="font-serif text-3xl md:text-4xl font-semibold text-brand-primary"
-          >
-            Our Services
+  <!-- About  -->
+  <section id="about" class="py-20 mt-32">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid items-center gap-10 md:grid-cols-[3fr_2fr]">
+        <div class="rounded-xl bg-white p-8">
+          <h2 class="font-serif text-3xl md:text-4xl font-semibold text-brand-primary">
+            About NIBROOK
           </h2>
-          <p class="mx-auto mt-3 max-w-2xl text-slate-700">
-            From foundational writing to advanced storytelling and public
-            speaking.
+          <p class="mt-4 text-slate-700 leading-relaxed">
+            At Nibrook, we specialize in delivering high-quality academic and business solutions tailored to your needs.
+            With over 6 years of experience and a team of 44+ expert professionals, we are committed to providing
+            exceptional services, whether it's academic research, business planning, or digital solutions like SEO. Your
+            success is our priority.
           </p>
+
+          <ul class="mt-6 space-y-3 text-slate-700">
+            <li class="flex items-center gap-3">
+              <span class="flex items-center justify-center w-8 h-8 bg-[#faefe9] rounded-full p-1">
+                <svg class="w-4 h-4 text-brand-accent" fill="none" stroke="currentColor" stroke-width="2"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              Experienced and dedicated team.
+            </li>
+
+            <li class="flex items-center gap-3">
+              <span class="flex items-center justify-center w-8 h-8 bg-[#faefe9] rounded-full p-1">
+                <svg class="w-4 h-4 text-brand-accent" fill="none" stroke="currentColor" stroke-width="2"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              Trusted by clients worldwide.
+            </li>
+
+            <li class="flex items-center gap-3">
+              <span class="flex items-center justify-center w-8 h-8 bg-[#faefe9] rounded-full p-1">
+                <svg class="w-4 h-4 text-brand-accent" fill="none" stroke="currentColor" stroke-width="2"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              Customized solutions for every need.
+            </li>
+
+            <li class="flex items-center gap-3">
+              <span class="flex items-center justify-center w-8 h-8 bg-[#faefe9] rounded-full p-1">
+                <svg class="w-4 h-4 text-brand-accent" fill="none" stroke="currentColor" stroke-width="2"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              On-time delivery with zero compromise.
+            </li>
+
+            <li class="flex items-center gap-3">
+              <span class="flex items-center justify-center w-8 h-8 bg-[#faefe9] rounded-full p-1">
+                <svg class="w-4 h-4 text-brand-accent" fill="none" stroke="currentColor" stroke-width="2"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              Premium quality at affordable rates.
+            </li>
+          </ul>
         </div>
 
-        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <article
-            class="rounded-2xl border border-black/5 bg-brand-cream p-6 shadow-soft hover:shadow-card transition"
-          >
-            <div
-              class="w-10 h-10 grid place-content-center rounded-lg bg-brand-accent/15 text-brand-accent"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-6 h-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M7 8h10M7 12h8m-5 4h5M5 4h14v16H5z"
-                />
-              </svg>
-            </div>
-            <h3 class="mt-4 font-semibold text-brand-green">
-              Academic Research Writing
-            </h3>
-            <p class="mt-2 text-sm text-brand-ink/80">
-              Custom Academic Papers: Expertly crafted, plagiarism-free content
-              for students, researchers, and professionals.
-            </p>
-          </article>
-
-          <article
-            class="rounded-2xl border border-black/5 bg-brand-cream p-6 shadow-soft hover:shadow-card transition"
-          >
-            <div
-              class="w-10 h-10 grid place-content-center rounded-lg bg-brand-accent/15 text-brand-accent"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-6 h-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M3 3v18h18M9 17V9m4 8v-5m4 5V5"
-                />
-              </svg>
-            </div>
-            <h3 class="mt-4 font-semibold text-brand-green">
-              SEO (Search Engine Optimization)
-            </h3>
-            <p class="mt-2 text-sm text-brand-ink/80">
-              Boost Your Online Presence: Increase visibility and drive traffic
-              with our proven SEO strategies.
-            </p>
-          </article>
-          <article
-            class="rounded-2xl border border-black/5 bg-brand-cream p-6 shadow-soft hover:shadow-card transition"
-          >
-            <div
-              class="w-10 h-10 grid place-content-center rounded-lg bg-brand-accent/15 text-brand-accent"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-6 h-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 7h16M4 7V5a2 2 0 012-2h12a2 2 0 012 2v2M4 7v12a2 2 0 002 2h12a2 2 0 002-2V7"
-                />
-              </svg>
-            </div>
-            <h3 class="mt-4 font-semibold text-brand-green">
-              Business Market Development
-            </h3>
-            <p class="mt-2 text-sm text-brand-ink/80">
-              Strategic Market Solutions: Guidance to help your business
-              identify growth opportunities.
-            </p>
-          </article>
-          <article
-            class="rounded-2xl border border-black/5 bg-brand-cream p-6 shadow-soft hover:shadow-card transition"
-          >
-            <div
-              class="w-10 h-10 grid place-content-center rounded-lg bg-brand-accent/15 text-brand-accent"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-6 h-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 2h6a2 2 0 012 2v2H7V4a2 2 0 012-2zM5 6h14v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6z"
-                />
-              </svg>
-            </div>
-            <h3 class="mt-4 font-semibold text-brand-green">Business Plans</h3>
-            <p class="mt-2 text-sm text-brand-ink/80">
-              Professional Business Plans: Comprehensive, customized plans to
-              help you succeed.
-            </p>
-          </article>
-          <article
-            class="rounded-2xl border border-black/5 bg-brand-cream p-6 shadow-soft hover:shadow-card transition"
-          >
-            <div
-              class="w-10 h-10 grid place-content-center rounded-lg bg-brand-accent/15 text-brand-accent"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-6 h-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 8c-2.21 0-4 1.79-4 4h8c0 2.21-1.79 4-4 4m0-8V4m0 16v-4"
-                />
-              </svg>
-            </div>
-            <h3 class="mt-4 font-semibold text-brand-green">
-              Business Bookkeeping
-            </h3>
-            <p class="mt-2 text-sm text-brand-ink/80">
-              Efficient Financial Management: Organize your finances with our
-              accurate bookkeeping.
-            </p>
-          </article>
-          <article
-            class="rounded-2xl border border-black/5 bg-brand-cream p-6 shadow-soft hover:shadow-card transition"
-          >
-            <div
-              class="w-10 h-10 grid place-content-center rounded-lg bg-brand-accent/15 text-brand-accent"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-6 h-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 14l9-5-9-5-9 5 9 5zm0 0v6m0 0l-3-3m3 3l3-3"
-                />
-              </svg>
-            </div>
-            <h3 class="mt-4 font-semibold text-brand-green">
-              Academic Coaching
-            </h3>
-            <p class="mt-2 text-sm text-brand-ink/80">
-              From essays to applications — clarity, rigor, and originality.
-            </p>
-          </article>
+        <div class="relative">
+          <div class="rounded-xl flex justify-center p-1">
+            <img
+              src="./assets/images/Scholar_Photos_-_Download_Free_High-Quality_Pictures___Freepik-removebg-preview.png"
+              alt="Students studying together" class="w-full max-w-[400px] rounded-[10px] object-cover" />
+          </div>
+          <div
+            class="absolute -bottom-4 -left-4 hidden sm:block rounded-lg bg-brand-accent px-4 py-2 text-brand-accentFg shadow animate-float-slow">
+            Breathe Life into Your Words
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- FAQ  -->
-    <section id="faq" class="py-20">
-      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <h2
-          class="text-center font-serif text-3xl md:text-4xl font-semibold text-brand-primary"
-        >
-          Frequently Asked Questions
+  <!-- Services  -->
+  <section id="services" class="py-16 sm:py-24 bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="font-serif text-3xl md:text-4xl font-semibold text-brand-primary">
+          Our Services
         </h2>
-        <div class="mt-8 space-y-4">
-          <details class="group rounded-lg bg-white p-5 shadow-feature">
-            <summary
-              class="cursor-pointer list-none font-medium flex items-center justify-between"
-            >
-              Can you guarantee plagiarism-free academic content?
-              <span
-                class="ml-4 text-brand-accent transition-transform group-open:rotate-45"
-                >+</span
-              >
-            </summary>
-            <p class="mt-3 text-slate-700 leading-relaxed">
-              Yes. All our content is 100% plagiarism-free, verified through
-              advanced plagiarism detection tools, and customized to meet
-              specific academic standards.
-            </p>
-          </details>
-
-          <details class="group rounded-lg bg-white p-5 shadow-feature">
-            <summary
-              class="cursor-pointer list-none font-medium flex items-center justify-between"
-            >
-              Do you follow academic formatting and referencing styles?
-              <span
-                class="ml-4 text-brand-accent transition-transform group-open:rotate-45"
-                >+</span
-              >
-            </summary>
-            <p class="mt-3 text-slate-700 leading-relaxed">
-              Absolutely. We adhere to academic guidelines, including formatting
-              and referencing styles like Harvard, APA, or MLA, based on your
-              requirements.
-            </p>
-          </details>
-
-          <details class="group rounded-lg bg-white p-5 shadow-feature">
-            <summary
-              class="cursor-pointer list-none font-medium flex items-center justify-between"
-            >
-              How long does it take to deliver content?
-              <span
-                class="ml-4 text-brand-accent transition-transform group-open:rotate-45"
-                >+</span
-              >
-            </summary>
-            <p class="mt-3 text-slate-700 leading-relaxed">
-              It depends on the complexity and length of the project. Short
-              assignments can be delivered within 2–3 days, while larger
-              projects may take longer.
-            </p>
-          </details>
-        </div>
+        <p class="mx-auto mt-3 max-w-2xl text-slate-700">
+          From foundational writing to advanced storytelling and public
+          speaking.
+        </p>
       </div>
-    </section>
 
-        <!-- work flow -->
-    <section class="bg-white">
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="rounded-2xl border border-black/5 bg-brand-cream p-6 shadow-soft hover:shadow-card transition">
+          <div class="w-10 h-10 grid place-content-center rounded-lg bg-brand-accent/15 text-brand-accent">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M7 8h10M7 12h8m-5 4h5M5 4h14v16H5z" />
+            </svg>
+          </div>
+          <h3 class="mt-4 font-semibold text-brand-green">
+            Academic Research Writing
+          </h3>
+          <p class="mt-2 text-sm text-brand-ink/80">
+            Custom Academic Papers: Expertly crafted, plagiarism-free content
+            for students, researchers, and professionals.
+          </p>
+        </article>
+
+        <article class="rounded-2xl border border-black/5 bg-brand-cream p-6 shadow-soft hover:shadow-card transition">
+          <div class="w-10 h-10 grid place-content-center rounded-lg bg-brand-accent/15 text-brand-accent">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 3v18h18M9 17V9m4 8v-5m4 5V5" />
+            </svg>
+          </div>
+          <h3 class="mt-4 font-semibold text-brand-green">
+            SEO (Search Engine Optimization)
+          </h3>
+          <p class="mt-2 text-sm text-brand-ink/80">
+            Boost Your Online Presence: Increase visibility and drive traffic
+            with our proven SEO strategies.
+          </p>
+        </article>
+        <article class="rounded-2xl border border-black/5 bg-brand-cream p-6 shadow-soft hover:shadow-card transition">
+          <div class="w-10 h-10 grid place-content-center rounded-lg bg-brand-accent/15 text-brand-accent">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 7h16M4 7V5a2 2 0 012-2h12a2 2 0 012 2v2M4 7v12a2 2 0 002 2h12a2 2 0 002-2V7" />
+            </svg>
+          </div>
+          <h3 class="mt-4 font-semibold text-brand-green">
+            Business Market Development
+          </h3>
+          <p class="mt-2 text-sm text-brand-ink/80">
+            Strategic Market Solutions: Guidance to help your business
+            identify growth opportunities.
+          </p>
+        </article>
+        <article class="rounded-2xl border border-black/5 bg-brand-cream p-6 shadow-soft hover:shadow-card transition">
+          <div class="w-10 h-10 grid place-content-center rounded-lg bg-brand-accent/15 text-brand-accent">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 2h6a2 2 0 012 2v2H7V4a2 2 0 012-2zM5 6h14v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6z" />
+            </svg>
+          </div>
+          <h3 class="mt-4 font-semibold text-brand-green">Business Plans</h3>
+          <p class="mt-2 text-sm text-brand-ink/80">
+            Professional Business Plans: Comprehensive, customized plans to
+            help you succeed.
+          </p>
+        </article>
+        <article class="rounded-2xl border border-black/5 bg-brand-cream p-6 shadow-soft hover:shadow-card transition">
+          <div class="w-10 h-10 grid place-content-center rounded-lg bg-brand-accent/15 text-brand-accent">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 8c-2.21 0-4 1.79-4 4h8c0 2.21-1.79 4-4 4m0-8V4m0 16v-4" />
+            </svg>
+          </div>
+          <h3 class="mt-4 font-semibold text-brand-green">
+            Business Bookkeeping
+          </h3>
+          <p class="mt-2 text-sm text-brand-ink/80">
+            Efficient Financial Management: Organize your finances with our
+            accurate bookkeeping.
+          </p>
+        </article>
+        <article class="rounded-2xl border border-black/5 bg-brand-cream p-6 shadow-soft hover:shadow-card transition">
+          <div class="w-10 h-10 grid place-content-center rounded-lg bg-brand-accent/15 text-brand-accent">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 14l9-5-9-5-9 5 9 5zm0 0v6m0 0l-3-3m3 3l3-3" />
+            </svg>
+          </div>
+          <h3 class="mt-4 font-semibold text-brand-green">
+            Academic Coaching
+          </h3>
+          <p class="mt-2 text-sm text-brand-ink/80">
+            From essays to applications — clarity, rigor, and originality.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ  -->
+  <section id="faq" class="py-20">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-center font-serif text-3xl md:text-4xl font-semibold text-brand-primary">
+        Frequently Asked Questions
+      </h2>
+      <div class="mt-8 space-y-4">
+        <details class="group rounded-lg bg-white p-5 shadow-feature">
+          <summary class="cursor-pointer list-none font-medium flex items-center justify-between">
+            Can you guarantee plagiarism-free academic content?
+            <span class="ml-4 text-brand-accent transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="mt-3 text-slate-700 leading-relaxed">
+            Yes. All our content is 100% plagiarism-free, verified through
+            advanced plagiarism detection tools, and customized to meet
+            specific academic standards.
+          </p>
+        </details>
+
+        <details class="group rounded-lg bg-white p-5 shadow-feature">
+          <summary class="cursor-pointer list-none font-medium flex items-center justify-between">
+            Do you follow academic formatting and referencing styles?
+            <span class="ml-4 text-brand-accent transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="mt-3 text-slate-700 leading-relaxed">
+            Absolutely. We adhere to academic guidelines, including formatting
+            and referencing styles like Harvard, APA, or MLA, based on your
+            requirements.
+          </p>
+        </details>
+
+        <details class="group rounded-lg bg-white p-5 shadow-feature">
+          <summary class="cursor-pointer list-none font-medium flex items-center justify-between">
+            How long does it take to deliver content?
+            <span class="ml-4 text-brand-accent transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="mt-3 text-slate-700 leading-relaxed">
+            It depends on the complexity and length of the project. Short
+            assignments can be delivered within 2–3 days, while larger
+            projects may take longer.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- work flow -->
+<section class="bg-white">
   <div class="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-    <header class="mb-10 text-center">
-      <h1 class="text-balance text-2xl font-semibold text-gray-900 sm:text-3xl">
-    </header>
+    <div class="text-center">
+      <h2 class="font-serif text-3xl md:text-4xl font-semibold text-brand-primary">
+        How It's Works
+      </h2>
+      <p class="mx-auto mt-3 max-w-2xl text-slate-700">
+        Follow these simple steps to get your project completed efficiently and effectively.
+      </p>
+    </div>
 
-    <div class="relative">
-      <span
-        class="pointer-events-none absolute inset-y-0 left-1/2 hidden w-px -translate-x-1/2 bg-gray-200 md:block"
-        aria-hidden="true"
-      ></span>
+    <div class="relative mt-10">
+<span class="pointer-events-none absolute inset-y-0 left-[41%] hidden w-px -translate-x-1/2 bg-gray-200 md:block -z-11" aria-hidden="true"></span>
+
 
       <ol class="space-y-10">
-         <!-- Step 01  -->
+        <!-- Step 01 -->
         <li class="md:grid md:grid-cols-[1fr,auto,1.5fr] md:items-center md:gap-8">
-           <!-- Circle/icon  -->
           <div class="flex items-center justify-center md:justify-end">
             <div class="relative">
-              <div
-                class="flex h-24 w-24 items-center justify-center rounded-full border-4 border-brand-accent bg-white shadow-lg"
-              >
-                <img
-                  src="/placeholder.svg?height=48&width=48"
-                  alt="Icon representing step 1"
-                  class="h-12 w-12 opacity-70"
-                />
+              <div class="flex h-24 w-24 items-center justify-center rounded-full border-4 border-brand-accent bg-white shadow-lg">
+                <i class="fa-solid fa-envelope text-3xl text-brand-accent opacity-80"></i>
               </div>
-               <!-- small pointer toward the center line (desktop+)  -->
               <div class="absolute right-[-6px] top-1/2 hidden -translate-y-1/2 md:block">
                 <span class="block h-0 w-0 border-y-[9px] border-y-transparent border-l-[11px] border-l-white drop-shadow"></span>
               </div>
             </div>
           </div>
 
-           <!-- Step badge (desktop+)  -->
-          <div class="hidden md:flex justify-center">
-            <span
-              class="flex flex-col items-center rounded bg-brand-accent px-2 py-2 text-white shadow"
-              aria-label="Step 01"
-            >
+          <div class="hidden md:flex justify-center relative">
+            <span class="flex flex-col items-center rounded bg-brand-accent px-2 py-2 text-white shadow" aria-label="Step 01">
               <span class="text-[10px] font-semibold uppercase tracking-widest">Step</span>
               <span class="text-lg font-bold leading-none">01</span>
             </span>
           </div>
 
-           <!-- Text  -->
           <div>
-             <!-- mobile step badge  -->
             <div class="mb-3 flex items-center gap-2 md:hidden">
-              <span class="rounded bg-brand-accent px-2 py-1 text-[10px] font-semibold uppercase tracking-widest text-white">
-                <!-- Step 01 -->
-              </span>
-              <h3 class="text-sm font-semibold text-gray-900">Lorem ipsum dolor</h3>
+              <span class="rounded bg-brand-accent px-2 py-1 text-[10px] font-semibold uppercase tracking-widest text-white"></span>
+              <h3 class="text-sm font-semibold text-gray-900">Share Your Requirements</h3>
             </div>
 
-             <!-- desktop title  -->
-            <h3 class="hidden text-base font-semibold text-gray-900 md:block">Lorem ipsum dolor</h3>
+            <h3 class="hidden text-lg font-semibold text-gray-900 md:block">Share Your Requirements</h3>
 
             <p class="mt-1 text-sm leading-relaxed text-gray-600">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua erat volutpat.
+              Submit your project details through our contact form or email so we understand your needs.
             </p>
           </div>
         </li>
 
-         <!-- Step 02  -->
+        <!-- Step 02 -->
         <li class="md:grid md:grid-cols-[1fr,auto,1.5fr] md:items-center md:gap-8">
           <div class="flex items-center justify-center md:justify-end">
             <div class="relative">
-              <div
-                class="flex h-24 w-24 items-center justify-center rounded-full border-4 border-brand-accent bg-white shadow-lg"
-              >
-                <img
-                  src="/placeholder.svg?height=48&width=48"
-                  alt="Icon representing step 2"
-                  class="h-12 w-12 opacity-70"
-                />
+              <div class="flex h-24 w-24 items-center justify-center rounded-full border-4 border-brand-accent bg-white shadow-lg">
+                <i class="fa-solid fa-lightbulb text-3xl text-brand-accent opacity-80"></i>
               </div>
               <div class="absolute right-[-6px] top-1/2 hidden -translate-y-1/2 md:block">
                 <span class="block h-0 w-0 border-y-[9px] border-y-transparent border-l-[11px] border-l-white drop-shadow"></span>
@@ -775,7 +499,7 @@
             </div>
           </div>
 
-          <div class="hidden md:flex justify-center">
+          <div class="hidden md:flex justify-center relative">
             <span class="flex flex-col items-center rounded bg-brand-accent px-2 py-2 text-white shadow" aria-label="Step 02">
               <span class="text-[10px] font-semibold uppercase tracking-widest">Step</span>
               <span class="text-lg font-bold leading-none">02</span>
@@ -784,33 +508,24 @@
 
           <div>
             <div class="mb-3 flex items-center gap-2 md:hidden">
-              <span class="rounded bg-brand-accent px-2 py-1 text-[10px] font-semibold uppercase tracking-widest text-white">
-                <!-- Step 02 -->
-              </span>
-              <h3 class="text-sm font-semibold text-gray-900">Lorem ipsum dolor</h3>
+              <span class="rounded bg-brand-accent px-2 py-1 text-[10px] font-semibold uppercase tracking-widest text-white"></span>
+              <h3 class="text-sm font-semibold text-gray-900">Get a Custom Plan</h3>
             </div>
 
-            <h3 class="hidden text-base font-semibold text-gray-900 md:block">Lorem ipsum dolor</h3>
+            <h3 class="hidden text-lg font-semibold text-gray-900 md:block">Get a Custom Plan</h3>
 
             <p class="mt-1 text-sm leading-relaxed text-gray-600">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua erat volutpat.
+              Our team evaluates your requirements and proposes a personalized plan with clear timelines and pricing.
             </p>
           </div>
         </li>
 
-         <!-- Step 03  -->
+        <!-- Step 03 -->
         <li class="md:grid md:grid-cols-[1fr,auto,1.5fr] md:items-center md:gap-8">
           <div class="flex items-center justify-center md:justify-end">
             <div class="relative">
-              <div
-                class="flex h-24 w-24 items-center justify-center rounded-full border-4 border-brand-accent bg-white shadow-lg"
-              >
-                <img
-                  src="/placeholder.svg?height=48&width=48"
-                  alt="Icon representing step 3"
-                  class="h-12 w-12 opacity-70"
-                />
+              <div class="flex h-24 w-24 items-center justify-center rounded-full border-4 border-brand-accent bg-white shadow-lg">
+                <i class="fa-solid fa-gears text-3xl text-brand-accent opacity-80"></i>
               </div>
               <div class="absolute right-[-6px] top-1/2 hidden -translate-y-1/2 md:block">
                 <span class="block h-0 w-0 border-y-[9px] border-y-transparent border-l-[11px] border-l-white drop-shadow"></span>
@@ -818,7 +533,7 @@
             </div>
           </div>
 
-          <div class="hidden md:flex justify-center">
+          <div class="hidden md:flex justify-center relative">
             <span class="flex flex-col items-center rounded bg-brand-accent px-2 py-2 text-white shadow" aria-label="Step 03">
               <span class="text-[10px] font-semibold uppercase tracking-widest">Step</span>
               <span class="text-lg font-bold leading-none">03</span>
@@ -827,33 +542,24 @@
 
           <div>
             <div class="mb-3 flex items-center gap-2 md:hidden">
-              <span class="rounded bg-brand-accent px-2 py-1 text-[10px] font-semibold uppercase tracking-widest text-white">
-                <!-- Step 03 -->
-              </span>
-              <h3 class="text-sm font-semibold text-gray-900">Lorem ipsum dolor</h3>
+              <span class="rounded bg-brand-accent px-2 py-1 text-[10px] font-semibold uppercase tracking-widest text-white"></span>
+              <h3 class="text-sm font-semibold text-gray-900">Service Execution</h3>
             </div>
 
-            <h3 class="hidden text-base font-semibold text-gray-900 md:block">Lorem ipsum dolor</h3>
+            <h3 class="hidden text-lg font-semibold text-gray-900 md:block">Service Execution</h3>
 
             <p class="mt-1 text-sm leading-relaxed text-gray-600">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua erat volutpat.
+              Our experts begin work on your project, keeping you updated at every stage.
             </p>
           </div>
         </li>
 
-         <!-- Step 04  -->
+        <!-- Step 04 -->
         <li class="md:grid md:grid-cols-[1fr,auto,1.5fr] md:items-center md:gap-8">
           <div class="flex items-center justify-center md:justify-end">
             <div class="relative">
-              <div
-                class="flex h-24 w-24 items-center justify-center rounded-full border-4 border-brand-accent bg-white shadow-lg"
-              >
-                <img
-                  src="/placeholder.svg?height=48&width=48"
-                  alt="Icon representing step 4"
-                  class="h-12 w-12 opacity-70"
-                />
+              <div class="flex h-24 w-24 items-center justify-center rounded-full border-4 border-brand-accent bg-white shadow-lg">
+                <i class="fa-solid fa-pencil-ruler text-3xl text-brand-accent opacity-80"></i>
               </div>
               <div class="absolute right-[-6px] top-1/2 hidden -translate-y-1/2 md:block">
                 <span class="block h-0 w-0 border-y-[9px] border-y-transparent border-l-[11px] border-l-white drop-shadow"></span>
@@ -861,7 +567,7 @@
             </div>
           </div>
 
-          <div class="hidden md:flex justify-center">
+          <div class="hidden md:flex justify-center relative">
             <span class="flex flex-col items-center rounded bg-brand-accent px-2 py-2 text-white shadow" aria-label="Step 04">
               <span class="text-[10px] font-semibold uppercase tracking-widest">Step</span>
               <span class="text-lg font-bold leading-none">04</span>
@@ -870,192 +576,167 @@
 
           <div>
             <div class="mb-3 flex items-center gap-2 md:hidden">
-              <span class="rounded bg-brand-accent px-2 py-1 text-[10px] font-semibold uppercase tracking-widest text-white">
-                <!-- Step 04 -->
-              </span>
-              <h3 class="text-sm font-semibold text-gray-900">Lorem ipsum dolor</h3>
+              <span class="rounded bg-brand-accent px-2 py-1 text-[10px] font-semibold uppercase tracking-widest text-white"></span>
+              <h3 class="text-sm font-semibold text-gray-900">Review and Revise</h3>
             </div>
 
-            <h3 class="hidden text-base font-semibold text-gray-900 md:block">Lorem ipsum dolor</h3>
+            <h3 class="hidden text-lg font-semibold text-gray-900 md:block">Review and Revise</h3>
 
             <p class="mt-1 text-sm leading-relaxed text-gray-600">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua erat volutpat.
+              We consider your feedback and make adjustments until the project meets your expectations.
             </p>
           </div>
         </li>
-      </ol>
-    </div>
-    
-  </div>
-</section>
 
-    <!-- Testimonials  -->
-    <section id="testimonials" class="py-20 bg-white">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <h2
-            class="font-serif text-3xl md:text-4xl font-semibold text-brand-primary"
-          >
-            What Students Say
-          </h2>
-          <p class="mx-auto mt-3 max-w-2xl text-slate-700">
-            Real outcomes from real learners.
-          </p>
-        </div>
-
-        <!-- ✅ Swiper Container -->
-        <div class="mt-10 swiper mySwiper pb-12">
-          <div class="swiper-wrapper">
-            <!-- Slide 1 -->
-            <div class="swiper-slide">
-              <figure
-                class="rounded-xl bg-brand-cream p-6 shadow-feature text-center"
-              >
-                <div class="flex justify-center mb-4">
-                  <div
-                    class="w-16 h-16 bg-brand-accent rounded-full flex items-center justify-center"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="w-8 h-8 text-white"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M5.121 17.804A4 4 0 018 16h8a4 4 0 012.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-                <blockquote class="text-slate-800 italic">
-                  &ldquo;The mentorship made my essays shine. I landed an
-                  internship!&rdquo;
-                </blockquote>
-                <figcaption class="mt-3 text-sm text-slate-600">
-                  — Aisha, Creative Writing
-                </figcaption>
-              </figure>
-            </div>
-
-            <!-- Slide 2 -->
-            <div class="swiper-slide">
-              <figure
-                class="rounded-xl bg-brand-cream p-6 shadow-feature text-center"
-              >
-                <div class="flex justify-center mb-4">
-                  <div
-                    class="w-16 h-16 bg-brand-accent rounded-full flex items-center justify-center"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="w-8 h-8 text-white"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M5.121 17.804A4 4 0 018 16h8a4 4 0 012.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-                <blockquote class="text-slate-800 italic">
-                  &ldquo;Clear, actionable feedback every week. Highly
-                  recommend.&rdquo;
-                </blockquote>
-                <figcaption class="mt-3 text-sm text-slate-600">
-                  — Mateo, Business Comms
-                </figcaption>
-              </figure>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="swiper-slide">
-              <figure
-                class="rounded-xl bg-brand-cream p-6 shadow-feature text-center"
-              >
-                <div class="flex justify-center mb-4">
-                  <div
-                    class="w-16 h-16 bg-brand-accent rounded-full flex items-center justify-center"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="w-8 h-8 text-white"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M5.121 17.804A4 4 0 018 16h8a4 4 0 012.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-                <blockquote class="text-slate-800 italic">
-                  &ldquo;I finally speak with confidence. Presentations are now
-                  my strength.&rdquo;
-                </blockquote>
-                <figcaption class="mt-3 text-sm text-slate-600">
-                  — Lin, Public Speaking
-                </figcaption>
-              </figure>
-            </div>
-
-            <!-- Slide 4 -->
-            <div class="swiper-slide">
-              <figure
-                class="rounded-xl bg-brand-cream p-6 shadow-feature text-center"
-              >
-                <div class="flex justify-center mb-4">
-                  <div
-                    class="w-16 h-16 bg-brand-accent rounded-full flex items-center justify-center"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="w-8 h-8 text-white"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M5.121 17.804A4 4 0 018 16h8a4 4 0 012.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-                <blockquote class="text-slate-800 italic">
-                  &ldquo;I finally speak with confidence. Presentations are now
-                  my strength.&rdquo;
-                </blockquote>
-                <figcaption class="mt-3 text-sm text-slate-600">
-                  — Lin, Public Speaking
-                </figcaption>
-              </figure>
+        <!-- Step 05 -->
+        <li class="md:grid md:grid-cols-[1fr,auto,1.5fr] md:items-center md:gap-8">
+          <div class="flex items-center justify-center md:justify-end">
+            <div class="relative">
+              <div class="flex h-24 w-24 items-center justify-center rounded-full border-4 border-brand-accent bg-white shadow-lg">
+                <i class="fa-solid fa-check-circle text-3xl text-brand-accent opacity-80"></i>
+              </div>
+              <div class="absolute right-[-6px] top-1/2 hidden -translate-y-1/2 md:block">
+                <span class="block h-0 w-0 border-y-[9px] border-y-transparent border-l-[11px] border-l-white drop-shadow"></span>
+              </div>
             </div>
           </div>
 
-          <!-- ✅ Pagination Dots -->
-          <div class="swiper-pagination mt-6"></div>
+          <div class="hidden md:flex justify-center relative">
+            <span class="flex flex-col items-center rounded bg-brand-accent px-2 py-2 text-white shadow" aria-label="Step 05">
+              <span class="text-[10px] font-semibold uppercase tracking-widest">Step</span>
+              <span class="text-lg font-bold leading-none">05</span>
+            </span>
+          </div>
+
+          <div>
+            <div class="mb-3 flex items-center gap-2 md:hidden">
+              <span class="rounded bg-brand-accent px-2 py-1 text-[10px] font-semibold uppercase tracking-widest text-white"></span>
+              <h3 class="text-sm font-semibold text-gray-900">Receive Your Project</h3>
+            </div>
+
+            <h3 class="hidden text-lg font-semibold text-gray-900 md:block">Receive Your Project</h3>
+
+            <p class="mt-1 text-sm leading-relaxed text-gray-600">
+              Receive your completed project, polished and ready for submission or publication.
+            </p>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Testimonials  -->
+<section id="testimonials" class="py-20 bg-white">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="font-serif text-3xl md:text-4xl font-semibold text-brand-primary">
+        What Students Say
+      </h2>
+      <p class="mx-auto mt-3 max-w-2xl text-slate-700">
+        Real outcomes from real learners.
+      </p>
+    </div>
+
+    <!-- Swiper Container -->
+    <div class="mt-10 swiper mySwiper pb-12">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <figure class="rounded-xl bg-brand-cream p-6 shadow-feature text-center">
+            <div class="flex justify-center mb-4">
+              <div class="w-16 h-16 bg-brand-accent rounded-full flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M5.121 17.804A4 4 0 018 16h8a4 4 0 012.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+            </div>
+            <blockquote class="text-slate-800 italic">
+              &ldquo;The mentorship transformed my writing skills. I got accepted into my dream university!&rdquo;
+            </blockquote>
+            <figcaption class="mt-3 text-sm text-slate-600">
+              — John, Creative Writing
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <figure class="rounded-xl bg-brand-cream p-6 shadow-feature text-center">
+            <div class="flex justify-center mb-4">
+              <div class="w-16 h-16 bg-brand-accent rounded-full flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M5.121 17.804A4 4 0 018 16h8a4 4 0 012.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+            </div>
+            <blockquote class="text-slate-800 italic">
+              &ldquo;The feedback I received was precise and actionable. My business reports improved dramatically.&rdquo;
+            </blockquote>
+            <figcaption class="mt-3 text-sm text-slate-600">
+              — Albert, Business Communication
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <figure class="rounded-xl bg-brand-cream p-6 shadow-feature text-center">
+            <div class="flex justify-center mb-4">
+              <div class="w-16 h-16 bg-brand-accent rounded-full flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M5.121 17.804A4 4 0 018 16h8a4 4 0 012.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+            </div>
+            <blockquote class="text-slate-800 italic">
+              &ldquo;Thanks to the training, I now deliver presentations confidently and captivate my audience every time.&rdquo;
+            </blockquote>
+            <figcaption class="mt-3 text-sm text-slate-600">
+              — Aysha, Public Speaking
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="swiper-slide">
+          <figure class="rounded-xl bg-brand-cream p-6 shadow-feature text-center">
+            <div class="flex justify-center mb-4">
+              <div class="w-16 h-16 bg-brand-accent rounded-full flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M5.121 17.804A4 4 0 018 16h8a4 4 0 012.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+            </div>
+            <blockquote class="text-slate-800 italic">
+              &ldquo;The weekly guidance and hands-on exercises boosted my confidence. I excelled in my exams!&rdquo;
+            </blockquote>
+            <figcaption class="mt-3 text-sm text-slate-600">
+              — Rahul, Academic Coaching
+            </figcaption>
+          </figure>
         </div>
       </div>
-    </section>
 
-    <!-- Contact  -->
-    <!-- <section id="contact" class="py-20">
+      <!-- Pagination Dots -->
+      <div class="swiper-pagination mt-6"></div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Contact  -->
+  <!-- <section id="contact" class="py-20">
       <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div class="text-center">
           <h2
@@ -1127,175 +808,120 @@
       </div>
     </section> -->
 
-    <!-- Footer  -->
-    <footer class="bg-white py-12 border-t border-gray-200">
-      <div
-        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8"
-      >
-        <!-- Company Info -->
-        <div>
-          <img src="./assets/images/logo-1.png" class="w-[50%]" />
-          <p class="text-slate-600 mb-2">Nibrook Academic Research Center</p>
-          <p class="text-slate-600 mb-2">Ground Floor, CD Tower, Kozhikode</p>
-          <p class="text-slate-600 mb-2">
-            <strong class="text-slate-600">Phone:</strong> 9846225356
-          </p>
-          <p class="text-slate-600 mb-4">
-            <strong class="text-slate-600">Email:</strong> nibrookcalicut@gmail.com
-          </p>
-        </div>
-
-        <!-- Useful Links -->
-        <div>
-          <h3 class="text-lg font-semibold text-orange-500 mb-4">
-            Useful Links
-          </h3>
-          <ul class="space-y-2">
-            <li>
-              <i
-                aria-hidden="true"
-                class="fas fa-caret-right me-2 text-slate-600"
-              ></i>
-              <a href="#" class="text-slate-600 hover:text-orange-500">Home</a>
-            </li>
-            <li>
-              <i
-                aria-hidden="true"
-                class="fas fa-caret-right me-2 text-slate-600"
-              ></i>
-              <a href="#about" class="text-slate-600 hover:text-orange-500"
-                >About us</a
-              >
-            </li>
-            <li>
-              <i
-                aria-hidden="true"
-                class="fas fa-caret-right me-2 text-slate-600"
-              ></i>
-              <a href="#services" class="text-slate-600 hover:text-orange-500"
-                >Services</a
-              >
-            </li>
-            <li>
-              <i
-                aria-hidden="true"
-                class="fas fa-caret-right me-2 text-slate-600"
-              ></i>
-              <a
-                href="./terms-service.html"
-                class="text-slate-600 hover:text-orange-500"
-                >Terms of service</a
-              >
-            </li>
-            <li>
-              <i
-                aria-hidden="true"
-                class="fas fa-caret-right me-2 text-slate-600"
-              ></i>
-              <a
-                href="./privacy-policy.html"
-                class="text-slate-600 hover:text-orange-500"
-                >Privacy policy</a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <!-- Services -->
-        <div>
-          <h3 class="text-lg font-semibold text-orange-500 mb-4">
-            Our Services
-          </h3>
-          <ul class="space-y-2">
-            <li>
-              <i
-                aria-hidden="true"
-                class="fas fa-caret-right me-2 text-slate-600"
-              ></i>
-              <a href="#services" class="text-slate-600 hover:text-orange-500"
-                >Academic Writing</a
-              >
-            </li>
-            <li>
-              <i
-                aria-hidden="true"
-                class="fas fa-caret-right me-2 text-slate-600"
-              ></i>
-              <a href="#services" class="text-slate-600 hover:text-orange-500"
-                >Business Plans</a
-              >
-            </li>
-            <li>
-              <i
-                aria-hidden="true"
-                class="fas fa-caret-right me-2 text-slate-600"
-              ></i>
-              <a href="#services" class="text-slate-600 hover:text-orange-500"
-                >Business Development</a
-              >
-            </li>
-            <li>
-              <i
-                aria-hidden="true"
-                class="fas fa-caret-right me-2 text-slate-600"
-              ></i>
-              <a href="#services" class="text-slate-600 hover:text-orange-500"
-                >Business Bookkeeping</a
-              >
-            </li>
-            <li>
-              <i
-                aria-hidden="true"
-                class="fas fa-caret-right me-2 text-slate-600"
-              ></i>
-              <a href="#services" class="text-slate-600 hover:text-orange-500"
-                >SEO</a
-              >
-            </li>
-          </ul>
-        </div>
+  <!-- Footer  -->
+  <footer class="bg-white py-12 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Company Info -->
+      <div>
+        <img src="./assets/images/logo-1.png" class="w-[50%]" />
+        <p class="text-slate-600 mb-2">Nibrook Academic Research Center</p>
+        <p class="text-slate-600 mb-2">Ground Floor, CD Tower, Kozhikode</p>
+        <p class="text-slate-600 mb-2">
+          <strong class="text-slate-600">Phone:</strong> 9846225356
+        </p>
+        <p class="text-slate-600 mb-4">
+          <strong class="text-slate-600">Email:</strong> nibrookcalicut@gmail.com
+        </p>
       </div>
 
-      <div
-        class="border-t border-gray-300 mt-8 pt-4 text-center text-sm text-slate-600"
-      >
-        ©2025
-        <span class="text-slate-600 font-semibold">Nibrook International.</span>
-        All Rights Reserved.
+      <!-- Useful Links -->
+      <div>
+        <h3 class="text-lg font-semibold text-orange-500 mb-4">
+          Useful Links
+        </h3>
+        <ul class="space-y-2">
+          <li>
+            <i aria-hidden="true" class="fas fa-caret-right me-2 text-slate-600"></i>
+            <a href="#" class="text-slate-600 hover:text-orange-500">Home</a>
+          </li>
+          <li>
+            <i aria-hidden="true" class="fas fa-caret-right me-2 text-slate-600"></i>
+            <a href="#about" class="text-slate-600 hover:text-orange-500">About us</a>
+          </li>
+          <li>
+            <i aria-hidden="true" class="fas fa-caret-right me-2 text-slate-600"></i>
+            <a href="#services" class="text-slate-600 hover:text-orange-500">Services</a>
+          </li>
+          <li>
+            <i aria-hidden="true" class="fas fa-caret-right me-2 text-slate-600"></i>
+            <a href="./terms-service.html" class="text-slate-600 hover:text-orange-500">Terms of service</a>
+          </li>
+          <li>
+            <i aria-hidden="true" class="fas fa-caret-right me-2 text-slate-600"></i>
+            <a href="./privacy-policy.html" class="text-slate-600 hover:text-orange-500">Privacy policy</a>
+          </li>
+        </ul>
       </div>
-    </footer>
 
-    <a class="wtsApp-button" target="_blank" href="https://wa.me/9846225356">
-      <div class="wtsApp_btn_bottom">
-        <i class="fa-brands fa-whatsapp" style="font-size: 22px"></i>
+      <!-- Services -->
+      <div>
+        <h3 class="text-lg font-semibold text-orange-500 mb-4">
+          Our Services
+        </h3>
+        <ul class="space-y-2">
+          <li>
+            <i aria-hidden="true" class="fas fa-caret-right me-2 text-slate-600"></i>
+            <a href="#services" class="text-slate-600 hover:text-orange-500">Academic Writing</a>
+          </li>
+          <li>
+            <i aria-hidden="true" class="fas fa-caret-right me-2 text-slate-600"></i>
+            <a href="#services" class="text-slate-600 hover:text-orange-500">Business Plans</a>
+          </li>
+          <li>
+            <i aria-hidden="true" class="fas fa-caret-right me-2 text-slate-600"></i>
+            <a href="#services" class="text-slate-600 hover:text-orange-500">Business Development</a>
+          </li>
+          <li>
+            <i aria-hidden="true" class="fas fa-caret-right me-2 text-slate-600"></i>
+            <a href="#services" class="text-slate-600 hover:text-orange-500">Business Bookkeeping</a>
+          </li>
+          <li>
+            <i aria-hidden="true" class="fas fa-caret-right me-2 text-slate-600"></i>
+            <a href="#services" class="text-slate-600 hover:text-orange-500">SEO</a>
+          </li>
+        </ul>
       </div>
-    </a>
+    </div>
 
-    <!-- tiny inline year script (safe, no framework)  -->
-    <script>
-      document.getElementById("y").textContent = new Date().getFullYear();
-    </script>
+    <div class="border-t border-gray-300 mt-8 pt-4 text-center text-sm text-slate-600">
+      ©2025
+      <span class="text-slate-600 font-semibold">Nibrook International.</span>
+      All Rights Reserved.
+    </div>
+  </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <a class="wtsApp-button" target="_blank" href="https://wa.me/9846225356">
+    <div class="wtsApp_btn_bottom">
+      <i class="fa-brands fa-whatsapp" style="font-size: 22px"></i>
+    </div>
+  </a>
 
-    <script>
-      const swiper = new Swiper(".mySwiper", {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        loop: true,
-        autoplay: {
-          delay: 4000,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        breakpoints: {
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
-        },
-      });
-    </script>
-  </body>
+  <!-- tiny inline year script (safe, no framework)  -->
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    const swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+      },
+    });
+  </script>
+</body>
+
 </html>
